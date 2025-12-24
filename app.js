@@ -1,5 +1,6 @@
 import express from 'express'
 import agentsRoutes from './routes/agents.routes.js'
+import reportsRoutes from './routes/reports.routes.js'
 import usersRouts from './routes/users.routes.js'
 import { loadData } from './utils/readWriteJson.js';
 
@@ -18,6 +19,7 @@ app.use(express.json());
 
 app.get('/health', (req, res) => res.json({ ok: true }));
 app.use('/agents', agentsRoutes);
+app.use('/reports', reportsRoutes);
 app.use('/users', usersRouts);
 
 
