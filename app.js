@@ -1,4 +1,5 @@
 import express from 'express'
+import agentsRoutes from './routes/agents.routes.js'
 import usersRouts from './routes/users.routes.js'
 import { loadData } from './utils/readWriteJson.js';
 
@@ -16,6 +17,7 @@ const PORT = 3700
 app.use(express.json());
 
 app.get('/health', (req, res) => res.json({ ok: true }));
+app.use('/agents', agentsRoutes);
 app.use('/users', usersRouts);
 
 
